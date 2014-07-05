@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Docker debug with nsenter on boot2docker"
+date: 2014-07-05 14:05:41 +0200
+comments: true
+categories: [Docker, DevOps, Boot2docker, nsenter]
+author: Lajos Papp
+published: true
+---
 
 `nsenter` is a small tool allowing to `enter` into `n`ame`s`paces. Specifically
 when you work with docker, it means you can *enter* any docker container, even
@@ -74,5 +83,12 @@ So combine all the steps into a single **one-liner** function:
 
 ```
 docker-enter() { boot2docker ssh -t "[ -f /var/lib/boot2docker/nsenter ] || (docker run --rm -v /var/lib/boot2docker/:/target jpetazzo/nsenter ; sudo curl -Lo /var/lib/boot2docker/docker-enter https://raw.githubusercontent.com/jpetazzo/nsenter/master/docker-enter ) ; sudo /var/lib/boot2docker/docker-enter $@"; }
+```
+
+If you want it permanently either copy-paste it into your `~/.profile` or 
+`~/.bash_profile`. Or save it into `/usr/local/bin`:
+
+```
+curl -Lo /usr/local/bin/docker-enter j.mp/docker-enter && . /usr/local/bin/docker-enter
 ```
 
