@@ -1,6 +1,6 @@
 : << INSTALLATION
 ##############################
-curl -Lo /tmp/docker-enter j.mp/docker-enter && . /tmp/docker-enter
+curl -Lo /usr/local/bin/docker-enter j.mp/docker-enter && . /usr/local/bin/docker-enter
 ##############################
 INSTALLATION
  
