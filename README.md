@@ -1,12 +1,3 @@
----
-layout: post
-title: "Docker debug with nsenter on boot2docker"
-date: 2014-07-05 14:05:41 +0200
-comments: true
-categories: [Docker, DevOps, Boot2docker, nsenter]
-author: Lajos Papp
-published: true
----
 
 `nsenter` is a small tool allowing to `enter` into `n`ame`s`paces. Specifically
 when you work with docker, it means you can *enter* any docker container, even
