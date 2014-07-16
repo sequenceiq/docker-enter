@@ -23,7 +23,7 @@ docker-enter() {
 the first line installs `nsenter` and `docker-enter` if missing and the second line
 does the actual call.
 
-once you declated the function, you can use it as:
+once you declared the function, you can use it as:
 
 ```
 docker-enter <CONTAINER-ID/CONTAINER-NAME>
